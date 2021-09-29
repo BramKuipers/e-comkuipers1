@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!--Added below function to set the after order import date in the existing instance.-->
+        <function model="woo.instance.ept" name="set_woo_import_after_date"/>
+    </data>
+
+</odoo>
