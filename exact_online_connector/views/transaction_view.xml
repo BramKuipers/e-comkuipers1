@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_transaction_form" model="ir.ui.view">
+            <field name="name">exact.transaction.form</field>
+            <field name="model">exact.transaction</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button type="object" name="action_retry" string="Retry"
+                                attrs="{'invisible': ['|', ('state', 'in', ['todo', 'retry', 'syncing', 'done']), ('retry_attempt', '>=', 5)]}"/>
+                        <button type="object" name="action_run" string="Run"
+                                attrs="{'invisible': ['|', ('state', 'not in', ['todo', 'retry']), ('retry_attempt', '>=', 5)]}"/>
+                        <field name="state" widget="statusbar" statusbar_visible="todo,syncing,done"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="company_id"/>
+                            <field name="date_planned" attrs="{'invisible': [('state', 'not in', ['todo', 'retry'])]}"/>
+                            <field name="retry_attempt" attrs="{'invisible': [('state', 'not in', ['retry'])]}"/>
+                            <field name="date_sent" attrs="{'invisible': [('state', 'in', ['todo'])]}"/>
+                            <field name="date_done" attrs="{'invisible': [('state', 'not in', ['done'])]}"/>
+                            <field name="res_model"/>
+                            <field name="res_id"/>
+                            <field name="exception" attrs="{'invisible': [('state', 'not in', ['retry', 'except_odoo', 'except_exact', 'except_connector'])]}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_transaction_tree" model="ir.ui.view">
+            <field name="name">exact.transaction.tree</field>
+            <field name="model">exact.transaction</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="company_id"/>
+                    <field name="date_planned"/>
+                    <field name="res_model"/>
+                    <field name="res_id"/>
+                    <field name="state"/>
+                    <field name="date_done"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_transaction_search" model="ir.ui.view">
+            <field name="name">exact.transaction.search</field>
+            <field name="model">exact.transaction</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="company_id"/>
+                    <field name="res_model"/>
+                    <field name="res_id"/>
+                    <separator/>
+                    <filter name="todo" string="To Do" domain="[('state', '=', 'todo')]"/>
+                    <filter name="retry" string="Retrying" domain="[('state', '=', 'retry')]"/>
+                    <filter name="sync" string="Syncing" domain="[('state', '=', 'sync')]"/>
+                    <filter name="error" string="Error" domain="[('state', 'ilike', 'except')]"/>
+                    <filter name="done" string="Synced" domain="[('state', '=', 'done')]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_view_transactions" model="ir.actions.act_window">
+            <field name="name">Transactions</field>
+            <field name="res_model">exact.transaction</field>
+            <field name="context">{
+                'search_default_todo': 1,
+                'search_default_retry': 1,
+            }</field>
+        </record>
+
+        <menuitem id="menu_exact_online"
+                  web_icon="exact_online_connector,static/description/icon.png"
+                  name="Exact Online Connector"/>
+        <menuitem id="menu_exact_online_transactions"
+                  action="action_view_transactions"
+                  parent="menu_exact_online"/>
+    </data>
+</odoo>

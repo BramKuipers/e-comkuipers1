@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_res_company_form_exact_online_connector" model="ir.ui.view">
+            <field name="name">res.company.form.exact_online_connector</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page name="exact" string="Exact online">
+                        <group name="connection" string="Connection">
+                            <field name="exact_online_uuid" invisble="1"/>
+                            <field name="exact_online_active" invisble="1"/>
+                            <field name="exact_online_state"/>
+                            <field name="exact_online_subscription_level" attrs="{'invisible': [('exact_online_state', '=', 'no')]}"/>
+                        </group>
+                        <group groups="exact_online_connector.group_exact_online_connector_manager">
+                            <button type="object" name="action_register_exact_online_connector" class="oe_highlight"
+                                    string="Register your connector" attrs="{'invisible': [('exact_online_state', '!=', 'no')]}"/>
+                            <button type="object" name="action_reconnect_exact_online_connector" class="oe_highlight"
+                                    string="Connect your connector" attrs="{'invisible': [('exact_online_state', '!=', 'registered')]}"/>
+                            <button type="object" name="action_reconnect_exact_online_connector" class="oe_highlight"
+                                    string="Reconnect your connector" attrs="{'invisible': [('exact_online_state', '!=', 'reconnect')]}"/>
+                            <field name="exact_online_state_message" nolabel="1"
+                                   attrs="{'invisible': [('exact_online_state', '!=', 'error')]}"/>
+                            <button type="object" name="action_do_initial_sync" class="oe_highlight"
+                                    string="Do the initial sync" attrs="{'invisible': [('exact_online_state', '!=', 'init')]}"/>
+                        </group>
+                    </page>
+                </notebook>
+                <sheet position="after">
+                    <div class="oe_chatter">
+                        <field name="activity_ids" widget="mail_activity"/>
+                    </div>
+                </sheet>
+            </field>
+        </record>
+    </data>
+</odoo>

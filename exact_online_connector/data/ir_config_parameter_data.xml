@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="exact_online_connector_sync_url" model="ir.config_parameter">
+            <field name="key">exact_online.sync_path</field>
+            <field name="value">/exact/sync</field>
+        </record>
+
+        <record id="exact_online_connector_auth_url" model="ir.config_parameter">
+            <field name="key">exact_online.registration_path</field>
+            <field name="value">/exact/register</field>
+        </record>
+
+        <record id="exact_online_connect_base_url" model="ir.config_parameter">
+            <field name="key">exact_online.base_url</field>
+            <field name="value">https://exact-connector.callista.be</field>
+        </record>
+    </data>
+</odoo>

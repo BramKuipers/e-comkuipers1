@@ -1,0 +1,1128 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* exact_online_connector
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-30 13:46+0000\n"
+"PO-Revision-Date: 2021-03-30 13:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "A total of"
+msgstr "Een totaal van"
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_account_account
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__account_id
+msgid "Account"
+msgstr "Rekening"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/account_move.py:0
+#, python-format
+msgid ""
+"Account {} does not have an Exact Online code. Please make sure it has one "
+"before posting this move."
+msgstr ""
+"Grootboekrekening {} heeft geen Exact Online code. Gelieve er voor te zorgen"
+" dat deze er een heeft alvorens deze boeking te boeken."
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Accounting journals"
+msgstr "Dagboeken"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync__state__accounts
+msgid "Accounts"
+msgstr "Grootboekrekeningen"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_company__exact_online_subscription_level__advanced
+msgid "Advanced"
+msgstr "Geavanceerd"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "All done, you can now close this window and start using the connector"
+msgstr ""
+"Volledig klaar, je mag dit venster sluiten en de connector beginnen "
+"gebruiken."
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid ""
+"All records that are present in Odoo need to be matched with a record in "
+"Exact Online."
+msgstr ""
+"Alle records die in Odoo zitten moeten overeenkomen met een record in "
+"Exact Online."
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Archive records in Odoo"
+msgstr "Archiveer records in Odoo"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_company__exact_online_state__payment
+msgid "Awaiting payment"
+msgstr "In afwachting van betaling"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__can_archive_invalid
+msgid "Can Archive Invalid"
+msgstr "Kan ongeldige archiveren"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__can_do_initial_move_sync
+msgid "Can Do Initial Move Sync"
+msgstr "Kan initiële sync van de boekingen doen"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__can_export_invalid
+msgid "Can Export Invalid"
+msgstr "Kan ongeldige exporteren"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__can_go_to_next_step
+msgid "Can Go To Next Step"
+msgstr "Kan naar volgende stap gaan"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__can_import_invalid
+msgid "Can Import Invalid"
+msgstr "Kan ongeldige importeren"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__can_remove_invalid
+msgid "Can Remove Invalid"
+msgstr "Kan ongeldige verwijderen"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__can_update_invalid
+msgid "Can Update Invalid"
+msgstr "Kan ongeldige updaten"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/wizard/exact_initial_sync.py:0
+#, python-format
+msgid "Can only get ids of a single initial sync"
+msgstr "Kan enkel ids ophalen van een enkele initiële sync"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Close"
+msgstr "Sluiten"
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_res_company
+msgid "Companies"
+msgstr "Bedrijven"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__company_id
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__company_id
+msgid "Company"
+msgstr "Bedrijf"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Configure GL accounts"
+msgstr "Grootboekrekeningen configureren"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Configure Taxes"
+msgstr "Belastingen configureren"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Configure accounting journals"
+msgstr "Dagboeken configureren"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Configure contacts"
+msgstr "Contacten configureren"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Configure payment terms"
+msgstr "Betalingscondities configureren"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Configure the date from which accounting entries should be synced"
+msgstr "Configureer de datum vanaf dewelke boekingen gesynchroniseerd moeten worden"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_res_company_form_exact_online_connector
+msgid "Connect your connector"
+msgstr "Verbind uw connector"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_res_company_form_exact_online_connector
+msgid "Connection"
+msgstr "Connectie"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_company__exact_online_state__registered
+msgid "Connector registered"
+msgstr "Connector geregistreerd"
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync__state__contacts
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Contacts"
+msgstr ""
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/wizard/exact_initial_sync.py:0
+#, python-format
+msgid ""
+"Could not get data from Exact Online, if your Connector is already "
+"connected, try again later. If not, connect it first"
+msgstr "Kon data niet ophalen van Exact Online, indien uw connector reeds verbonden is,"
+" gelieve dit later opnieuw te proberen. Indien niet, gelieve eerst verbinding te maken."
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_res_country
+msgid "Country"
+msgstr "Land"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__create_uid
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__create_uid
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__create_uid
+msgid "Created by"
+msgstr "Aangemaakt door"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__create_date
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__create_date
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__create_date
+msgid "Created on"
+msgstr "Aangemaakt op"
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_res_currency
+msgid "Currency"
+msgstr "Valuta"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__data
+msgid "Data"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_account__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_journal__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_move__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_payment_term__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_tax__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_data_mixin__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_sync_mixin__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_company__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_country__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_currency__display_name
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Schermnaam"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_res_company_form_exact_online_connector
+msgid "Do the initial sync"
+msgstr "Doe de initiële sync"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync__state__done
+msgid "Done"
+msgstr "Klaar"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__account_move__exact_online_state__error
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_sync_mixin__exact_online_state__error
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_company__exact_online_state__error
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_partner__exact_online_state__error
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_transaction_search
+msgid "Error"
+msgstr ""
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Exact"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync__master__exact
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_account_journal_form_exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_account_tax_form_exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_partner_form_exact_online
+msgid "Exact Online"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_company__exact_online_active
+msgid "Exact Online Active"
+msgstr "Exact Online actief"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_account__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_bank_statement_line__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_journal__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_move__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_payment__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_payment_term__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_tax__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_data_mixin__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_sync_mixin__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_country__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_currency__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_partner__exact_online_code
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_users__exact_online_code
+msgid "Exact Online Code"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.module.category,name:exact_online_connector.module_exact_online_connector
+#: model:ir.ui.menu,name:exact_online_connector.menu_exact_online
+msgid "Exact Online Connector"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_bank_statement_line__exact_online_guid
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_move__exact_online_guid
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_payment__exact_online_guid
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_sync_mixin__exact_online_guid
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_partner__exact_online_guid
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_users__exact_online_guid
+msgid "Exact Online Guid"
+msgstr "Exact Online GUID"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_company__exact_online_state_message
+msgid "Exact Online State Message"
+msgstr "Exact Online status bericht"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_company__exact_online_sync_from
+msgid "Exact Online Sync From"
+msgstr "Exact Online synchroniseren vanaf"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_company__exact_online_uuid
+msgid "Exact Online Uuid"
+msgstr "Exact Online UUID"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_bank_statement_line__exact_online_state
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_move__exact_online_state
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_payment__exact_online_state
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_sync_mixin__exact_online_state
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_partner__exact_online_state
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_users__exact_online_state
+msgid "Exact Online sync status"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.actions.server,name:exact_online_connector.cron_run_transactions_ir_actions_server
+#: model:ir.cron,cron_name:exact_online_connector.cron_run_transactions
+#: model:ir.cron,name:exact_online_connector.cron_run_transactions
+msgid "Exact Online: Run transactions"
+msgstr "Exact Online: Transacties uitvoeren"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_res_company_form_exact_online_connector
+msgid "Exact online"
+msgstr "Exact Online"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__exception
+msgid "Exception"
+msgstr "Uitzondering"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_transaction__state__except_connector
+msgid "Exception @ Connector"
+msgstr "Uitzondering @ Connector"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_transaction__state__except_exact
+msgid "Exception @ Exact"
+msgstr "Uitzondering @ Exact"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_transaction__state__except_odoo
+msgid "Exception @ Odoo"
+msgstr "Uitzondering @ Odoo"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Export records to Exact"
+msgstr "Exporteer records naar Exact Online"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "GL accounts"
+msgstr "Grootboekrekeningen"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,help:exact_online_connector.field_account_journal__sync_from_exact_online
+msgid "Get all moves posted in Exact Online"
+msgstr "Alle boekingen geboekt in Exact Online ophalen"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Go back"
+msgstr "Ga terug"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_account__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_journal__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_move__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_payment_term__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_tax__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_data_mixin__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_sync_mixin__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_company__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_country__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_currency__id
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model.fields,help:exact_online_connector.field_res_company__exact_online_sync_from
+msgid ""
+"If filled out, the connector will start syncing accounting data starting "
+"from the specified date."
+msgstr ""
+"Indien ingevuld, zal de connector boekingen synchroniseren vanaf de "
+"ingestelde datum."
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Import records from Exact"
+msgstr "Importeer records van Exact Online"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__in_exact
+msgid "In Exact"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__in_odoo
+msgid "In Odoo"
+msgstr ""
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Initial setup for your Exact Online Connector"
+msgstr "Initiële setup voor uw Exact Online connector"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync__state__intro
+msgid "Intro"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__invalid
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Invalid"
+msgstr "Ongeldig"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__invalid_count
+msgid "Invalid Count"
+msgstr "Aantal ongeldig"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__invalid_line_ids
+msgid "Invalid Line"
+msgstr "Ongeldige lijn"
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_account_journal
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__journal_id
+msgid "Journal"
+msgstr "Dagboek"
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_account_move
+msgid "Journal Entry"
+msgstr "Boeking"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync__state__journals
+msgid "Journals"
+msgstr "Dagboeken"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__journals_to_sync
+msgid "Journals to sync with Exact Online"
+msgstr "Dagboeken om te synchroniseren met Exact Online"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_account____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_journal____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_move____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_payment_term____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_tax____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_data_mixin____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_sync_mixin____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_company____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_country____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_currency____last_update
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Laatst gewijzigd op"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_journal__last_sync_from_exact_online
+msgid "Last Sync From Exact Online"
+msgstr "Laatste sync van Exact Online"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__write_uid
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__write_uid
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__write_uid
+msgid "Last Updated by"
+msgstr "Laatst bijgewerkt door"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__write_date
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__write_date
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__write_date
+msgid "Last Updated on"
+msgstr "Laatst bijgewerkt op"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__line_ids
+msgid "Line"
+msgstr "Regel"
+
+#. module: exact_online_connector
+#: model:res.groups,name:exact_online_connector.group_exact_online_connector_manager
+msgid "Manager"
+msgstr "Beheerder"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__master
+msgid "Master"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__res_model
+msgid "Model"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync__state__moves
+msgid "Moves"
+msgstr "Boekingen"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__moves_synced
+msgid "Moves Synced"
+msgstr "Boekingen gesynchroniseerd"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__moves_to_sync
+msgid "Moves To Sync"
+msgstr "Boekingen om te synchroniseren"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync__state__moves_initial
+msgid "Moves initial sync"
+msgstr "Intiële sync boekingen"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__name_in_exact
+msgid "Name In Exact"
+msgstr "Naam in Exact Online"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__name_in_odoo
+msgid "Name In Odoo"
+msgstr "Naam in Odoo"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Next"
+msgstr "Volgende"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync_line__reason__no_code
+msgid "No Exact Online Code defined"
+msgstr "Geen Exact Online code gedefinieerd"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_company__exact_online_state__no
+msgid "Not connected"
+msgstr "Niet verbonden"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync_line__reason__not_exact
+msgid "Not in Exact Online"
+msgstr "Niet in Exact Online"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync_line__reason__not_odoo
+msgid "Not in Odoo"
+msgstr "Niet in Odoo"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__account_move__exact_online_state__no
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_sync_mixin__exact_online_state__no
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_partner__exact_online_state__no
+msgid "Nothing to sync"
+msgstr "Niets te synch."
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync__master__odoo
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Odoo"
+msgstr ""
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid ""
+"Once you have configured these, you can enter the date from which accounting"
+" entries will be synced from Odoo to Exact Online. From that point on your "
+"Odoo and Exact Online administrations will be linked."
+msgstr ""
+"Wanneer u deze heeft ingesteld, kan u de datum ingeven vanaf wanneer boekingen"
+" gesynchroniseerd zullen worden van Odoo naar Exact Online. Vanaf dat moment zijn"
+" uw Odoo database en Exact Online administratie met elkaar gekoppeld."
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Open for export to excel/csv"
+msgstr "Openen voor export naar excel/csv"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_company__exact_online_state__ok
+msgid "Operating normally"
+msgstr "Normale werking"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__partner_id
+msgid "Partner"
+msgstr "Relatie"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__payment_term_id
+msgid "Payment Term"
+msgstr "Betalingsconditie"
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_account_payment_term
+msgid "Payment Terms"
+msgstr "Betalingscondities"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/account_move.py:0
+#, python-format
+msgid ""
+"Payment term {} does not have an Exact Online code. Please make sure it is "
+"has one before posting this move."
+msgstr ""
+"Betalingsconditie {} heeft geen Exact Online code. Gelieve ervoor te zorgen "
+"dat deze er een heeft alvorens deze boeking te boeken."
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync__state__payment_terms
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Payment terms"
+msgstr "Betalingscondities"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__date_planned
+msgid "Planned for"
+msgstr "Gepland voor"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,help:exact_online_connector.field_res_company__exact_online_state_message
+msgid "Provides an explanation of the error"
+msgstr "Geeft een uitleg over de foutmelding"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__account_move__exact_online_state__queued
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_sync_mixin__exact_online_state__queued
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_partner__exact_online_state__queued
+msgid "Queued for sync"
+msgstr "Gepland om te synch."
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_company__exact_online_state__init
+msgid "Ready for initial sync"
+msgstr "Klaar voor initiële sync"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__reason
+msgid "Reason"
+msgstr "Reden"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Recheck with Exact Online"
+msgstr "Opnieuw controleren met Exact Online"
+
+#. module: exact_online_connector
+#: model:mail.activity.type,name:exact_online_connector.mail_activity_type_exact_reconnect
+msgid "Reconnect exact connector"
+msgstr "Connector opnieuw verbinden"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_company__exact_online_state__reconnect
+msgid "Reconnect to connector"
+msgstr "Connector opnieuw verbinden"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_res_company_form_exact_online_connector
+msgid "Reconnect your connector"
+msgstr "Connector opnieuw verbinden"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__res_id
+msgid "Record ID"
+msgstr ""
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/transaction.py:0
+#, python-format
+msgid "Record no longer exists in Odoo"
+msgstr "Record bestaat niet meer in Odoo"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_res_company_form_exact_online_connector
+msgid "Register your connector"
+msgstr "Registreer uw connector"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/account_move.py:0
+#, python-format
+msgid ""
+"Relation {} is not synced with Exact Online. Please make sure it is synced "
+"before posting this move."
+msgstr ""
+"Relatie {} is niet gesynchroniseerd met Exact Online. Gelieve ervoor te "
+"zorgen dat deze gesynchroniseerd is alvorens deze boeking te boeken."
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Remove records in Odoo"
+msgstr "Verwijder records in Odoo"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_transaction_form
+msgid "Retry"
+msgstr "Opnieuw proberen"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__retry_attempt
+msgid "Retry attempt #"
+msgstr "Opnieuw proberen, poging #"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_transaction__state__retry
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_transaction_search
+msgid "Retrying"
+msgstr "Opnieuw aan het proberen"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_transaction_form
+msgid "Run"
+msgstr "Uitvoeren"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,help:exact_online_connector.field_account_bank_statement_line__exact_online_journal_synced
+#: model:ir.model.fields,help:exact_online_connector.field_account_journal__sync_with_exact_online
+#: model:ir.model.fields,help:exact_online_connector.field_account_move__exact_online_journal_synced
+#: model:ir.model.fields,help:exact_online_connector.field_account_payment__exact_online_journal_synced
+msgid "Send all moves posted in this journal to Exact Online"
+msgstr "Synchroniseer alle boekingen die geboekt worden in dit dagboek naar Exact Online"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__date_sent
+msgid "Sent at"
+msgstr "Verzonden op"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/wizard/exact_initial_sync.py:0
+#, python-format
+msgid "Something went wrong trying to contact Exact Online"
+msgstr "Er ging iets mis met de verbinding naar Exact Online"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/transaction.py:0
+#, python-format
+msgid "Something went wrong while trying to process the change"
+msgstr "Er ging iets mis tijdens de verwerking van de wijziging"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_company__exact_online_subscription_level__standard
+msgid "Standard"
+msgstr "Standaard"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__state
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__state
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_company__exact_online_state
+msgid "Status"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__subscription_level
+#: model:ir.model.fields,field_description:exact_online_connector.field_res_company__exact_online_subscription_level
+msgid "Subscription level"
+msgstr "Abonnement"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__sync_id
+msgid "Sync"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_journal__sync_from_exact_online_available
+msgid "Sync From Exact Online Available"
+msgstr "Synchronisatie van Exact Online naar Odoo beschikbaar"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__sync_start_date
+msgid "Sync Start Date"
+msgstr "Begindatum synchronisatie"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_journal__sync_with_exact_online_available
+msgid "Sync With Exact Online Available"
+msgstr "Synchroniseer naar Exact Online beschikbaar"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_journal__sync_from_exact_online
+msgid "Sync moves from Exact Online"
+msgstr "Synchroniseer boekingen van Exact Online"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Sync moves in the past"
+msgstr "Synchroniseer reeds gemaakte boekingen"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_bank_statement_line__exact_online_journal_synced
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_journal__sync_with_exact_online
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_move__exact_online_journal_synced
+#: model:ir.model.fields,field_description:exact_online_connector.field_account_payment__exact_online_journal_synced
+msgid "Sync moves to Exact Online"
+msgstr "Synchroniseer boekingen naar Exact Online"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Sync your moves from the past with Exact"
+msgstr "Synchroniseer uw reeds gemaakte boekingen naar Exact Online"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__account_move__exact_online_state__synced
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_sync_mixin__exact_online_state__synced
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_transaction__state__done
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_partner__exact_online_state__synced
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_transaction_search
+msgid "Synced"
+msgstr "Gesynch."
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_transaction__date_done
+msgid "Synced at"
+msgstr "Gesynchroniseerd op"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__account_move__exact_online_state__syncing
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_sync_mixin__exact_online_state__syncing
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_transaction__state__syncing
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__res_partner__exact_online_state__syncing
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_transaction_search
+msgid "Syncing"
+msgstr "Aan het synch."
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_account_tax
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync_line__tax_id
+msgid "Tax"
+msgstr "BTW"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/account_move.py:0
+#, python-format
+msgid ""
+"Tax {} does not have an Exact Online code. Please make sure it is has one "
+"before posting this move."
+msgstr ""
+"BTW {} heeft geen Exact Online code. Geliever er voor te zorgen dat deze er "
+"een heeft alvorens deze boeking te boeken."
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_initial_sync__state__taxes
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Taxes"
+msgstr "Belastingen"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/res_company.py:0
+#, python-format
+msgid ""
+"The Exact Online connector lost connection to your Exact administration.\n"
+"Please reconnect your connector as soon as possible from the company form!"
+msgstr ""
+"De Exact Online connector is de verbinding met uw Exact Online administratie verloren.\n"
+"Gelieve zo snel mogelijk opnieuw verbinding te maken met de Exact Online connector via de bedrijfsfiche!"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/res_company.py:0
+#, python-format
+msgid ""
+"The Exact Online connector lost connection to your Odoo database, did you change your credentials?\n"
+"Please reconnect your connector as soon as possible from the company form!"
+msgstr ""
+"De Exact Online connector is de verbinding met uw Odoo databank verloren, heeft u uw gebruikersnaam/wachtwoord gewijzigd?\n"
+"Gelieve zo snel mogelijk opnieuw verbinding te maken met de Exact Online connector via de bedrijfsfiche!"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/wizard/exact_initial_sync.py:0
+#: code:addons/exact_online_connector/wizard/exact_initial_sync.py:0
+#, python-format
+msgid "The connector is temporarily offline, please try again later"
+msgstr ""
+"De connector is tijdelijk offline, gelieve het later opnieuw te proberen"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/transaction.py:0
+#, python-format
+msgid ""
+"The connector is temporarily offline, will try to reach the connector again "
+"in {} minutes"
+msgstr ""
+"De connector is tijdelijk offline, er wordt een nieuwe poging gedaan binnen {} minuten"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid ""
+"The following records will be configured to make sure the connector can work"
+" properly"
+msgstr ""
+"De volgende records zullen geconfigureerd worden om ervoor te zorgen dat de "
+"connector correct kan werken"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,help:exact_online_connector.field_account_account__exact_online_code
+#: model:ir.model.fields,help:exact_online_connector.field_account_bank_statement_line__exact_online_code
+#: model:ir.model.fields,help:exact_online_connector.field_account_journal__exact_online_code
+#: model:ir.model.fields,help:exact_online_connector.field_account_move__exact_online_code
+#: model:ir.model.fields,help:exact_online_connector.field_account_payment__exact_online_code
+#: model:ir.model.fields,help:exact_online_connector.field_account_payment_term__exact_online_code
+#: model:ir.model.fields,help:exact_online_connector.field_account_tax__exact_online_code
+#: model:ir.model.fields,help:exact_online_connector.field_exact_data_mixin__exact_online_code
+#: model:ir.model.fields,help:exact_online_connector.field_exact_sync_mixin__exact_online_code
+#: model:ir.model.fields,help:exact_online_connector.field_res_country__exact_online_code
+#: model:ir.model.fields,help:exact_online_connector.field_res_currency__exact_online_code
+#: model:ir.model.fields,help:exact_online_connector.field_res_partner__exact_online_code
+#: model:ir.model.fields,help:exact_online_connector.field_res_users__exact_online_code
+msgid ""
+"The primary key used in Exact Online, this is usually a field name `Code`"
+msgstr ""
+"De primary key dat gebruikt wordt in Exact Online, dit is normaal gezien een "
+"veld genaamd `Code`"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,help:exact_online_connector.field_exact_initial_sync__invalid_count
+msgid "The total number of invalid records found in Odoo/Exact Online"
+msgstr "Het totale aantal ongeldige records die bestaan in Odoo/Exact Online"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,help:exact_online_connector.field_exact_initial_sync__valid_count
+msgid "The total number of valid records that exist in Odoo"
+msgstr "Het totale aantal geldige records dat bestaat in Odoo"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid ""
+"These records have already been matched and no further action is required."
+msgstr ""
+"Deze records zijn reeds gematcht en vereisen geen verdere actie."
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid ""
+"This process will guide you through the initial setup for Odoo - Exact "
+"Online connector"
+msgstr ""
+"Dit proces zal u begeleiden tijdens de initiële setup voor de Odoo - Exact "
+"Online connector"
+
+#. module: exact_online_connector
+#: model:ir.model.fields.selection,name:exact_online_connector.selection__exact_transaction__state__todo
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_transaction_search
+msgid "To Do"
+msgstr "Te doen"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/transaction.py:0
+#, python-format
+msgid ""
+"Too many failed attempts at automatically retrying this transaction.\n"
+"The connector seems to be offline, please contact Callista (https://callista.be/page/contact) for assistance"
+msgstr ""
+"Te veel gefaalde pogingen om deze transactie automatisch opnieuw uit te voeren.\n"
+"De connector lijkt offline te zijn, gelieve contact op te nemen met Callista (https://callista.be/page/contact) voor ondersteuning."
+
+#. module: exact_online_connector
+#: model:ir.actions.act_window,name:exact_online_connector.action_view_transactions
+#: model:ir.ui.menu,name:exact_online_connector.menu_exact_online_transactions
+msgid "Transactions"
+msgstr "Transacties"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Update records in Odoo"
+msgstr "Records bijwerken in Odoo"
+
+#. module: exact_online_connector
+#: model:res.groups,name:exact_online_connector.group_exact_online_connector_user
+msgid "User"
+msgstr "Gebruiker"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "Valid"
+msgstr "Geldig"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__valid_count
+msgid "Valid Count"
+msgstr "Aantal geldige lijnen"
+
+#. module: exact_online_connector
+#: model:ir.model.fields,field_description:exact_online_connector.field_exact_initial_sync__valid_line_ids
+msgid "Valid Line"
+msgstr "Geldige lijnen"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/wizard/exact_initial_sync.py:0
+#, python-format
+msgid "Will be synced"
+msgstr "Zal worden gesynct"
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid "You can do this by clicking the button below, this is optional and not required."
+msgstr "Je kan dit doen door op de knop hieronder te klikken, dit is optioneel en niet verplicht."
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid ""
+"You can either enter the Exact Online Code of the record and then click the button to update all the entries<br/>\n"
+"                                or<br/>\n"
+"                                try to archive or remove all the records in Odoo that do not have a matching Exact Online Code.<br/>\n"
+"                                <small>It is optional to match all records that are in Exact with a record that is in Odoo.</small>"
+msgstr ""
+"Je kan ofwel de Exact Online code van het record ingeven en dan klikken op de knop om de records in Odoo te updaten<br/>\n"
+"of<br/>\n"
+"je kan proberen om alle records in Odoo te archiveren of te verwijderen die geen overeenkomende Exact Online code hebben.<br/>\n"
+"<small>Het is optioneel om alle records die in Exact Online zitten te matchen met een record in Odoo.</small>\n"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/account.py:0
+#, python-format
+msgid ""
+"You can only get moves for journals from Exact Online with an advanced Exact"
+" Online subscription level"
+msgstr ""
+"Je kan enkel boekingen synchoniseren van Exact Online met een geavanceerd"
+" Exact Online connector abonnement"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/account.py:0
+#, python-format
+msgid ""
+"You can only sync sale and purchase journals with a standard Exact Online "
+"subscription level"
+msgstr ""
+"Je kan enkel verkoop- en aankoopdagboeken synchroniseren naar Exact Online met een standaard "
+"Exact Online connector abonnement"
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/account.py:0
+#, python-format
+msgid ""
+"You can only sync to Exact Online or sync from Exact Online, not both at the"
+" same time."
+msgstr ""
+"Je maar in één richting synchroniseren, dus ofwel naar Exact Online of van Exact Online,"
+" niet alletwee tegelijk."
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_exact_data_mixin
+msgid "exact.data.mixin"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_exact_initial_sync
+msgid "exact.initial_sync"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_exact_initial_sync_line
+msgid "exact.initial_sync.line"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_exact_sync_mixin
+msgid "exact.sync.mixin"
+msgstr ""
+
+#. module: exact_online_connector
+#: model:ir.model,name:exact_online_connector.model_exact_transaction
+msgid "exact.transaction"
+msgstr ""
+
+#. module: exact_online_connector
+#: model_terms:ir.ui.view,arch_db:exact_online_connector.view_exact_initial_sync_form
+msgid ""
+"posted moves can be synced to Exact Online based on the settings of the "
+"previous page."
+msgstr ""
+"geboekte boekingen kunnen gesynchroniseerd worden met Exact Online gebaseerd op de "
+"gegevens van de vorige pagina."
+
+#. module: exact_online_connector
+#: code:addons/exact_online_connector/models/mixins.py:0
+#, python-format
+msgid ""
+"{}({}) - {}, cannot be deleted because it is synced with Exact Online.\n"
+"Please archive this record instead!"
+msgstr ""
+"{}({}) - {}, kan niet verwijderd worden aangezien dit gesynchroniseerd is met Exact Online.\n"
+"Gelieve dit record te archiveren in plaats van de verwijderen indien mogelijk."

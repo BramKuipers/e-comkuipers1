@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_account_journal_form_exact_online_connector" model="ir.ui.view">
+            <field name="name">account.journal.form.exact_online_connector</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="exact_online" string="Exact Online" attrs="{'invisible': [('sync_with_exact_online_available', '=', False), ('sync_from_exact_online_available', '=', False)]}">
+                        <group>
+                            <field name="sync_with_exact_online_available" invisible="1"/>
+                            <field name="sync_with_exact_online" attrs="{'invisible': [('sync_with_exact_online_available', '=', False)]}"/>
+                            <field name="sync_from_exact_online_available" invisible="1"/>
+                            <field name="sync_from_exact_online" attrs="{'invisible': [('sync_from_exact_online_available', '=', False)]}"/>
+                            <field name="last_sync_from_exact_online" attrs="{'invisible': [('sync_from_exact_online', '=', False)]}"/>
+                            <field name="exact_online_code"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_payment_term_form_exact_online_connector" model="ir.ui.view">
+            <field name="name">account.payment.term.form.exact_online_connector</field>
+            <field name="model">account.payment.term</field>
+            <field name="inherit_id" ref="account.view_payment_term_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="exact_online_code"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_tax_form_exact_online_connector" model="ir.ui.view">
+            <field name="name">account.tax.form.exact_online_connector</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="exact_online" string="Exact Online">
+                        <group>
+                            <field name="exact_online_code"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

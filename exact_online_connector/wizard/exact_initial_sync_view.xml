@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_exact_initial_sync_form" model="ir.ui.view">
+            <field name="name">exact.initial_sync.form</field>
+            <field name="model">exact.initial_sync</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="company_id" invisible="1"/>
+                    <field name="subscription_level" invisible="1"/>
+                    <field name="state" invisible="1"/>
+                    <div attrs="{'invisible': [('state', '!=', 'intro')]}">
+                        <h2>Initial setup for your Exact Online Connector</h2>
+                        <p>This process will guide you through the initial setup for Odoo - Exact Online connector</p>
+                        <p>The following records will be configured to make sure the connector can work properly</p>
+                        <ul>
+                            <li>Accounting journals</li>
+                            <li>GL accounts</li>
+                            <li>Taxes</li>
+                            <li>Payment terms</li>
+                            <li>Contacts</li>
+                        </ul>
+                        <p>Once you have configured these, you can enter the date from which accounting entries will be synced from Odoo to Exact Online. From that point on your Odoo and Exact Online administrations will be linked.</p>
+                    </div>
+                    <div attrs="{'invisible': [('state', '!=', 'journals')]}">
+                        <h2>Configure accounting journals</h2>
+                    </div>
+                    <div attrs="{'invisible': [('state', '!=', 'accounts')]}">
+                        <h2>Configure GL accounts</h2>
+                    </div>
+                    <div attrs="{'invisible': [('state', '!=', 'taxes')]}">
+                        <h2>Configure Taxes</h2>
+                    </div>
+                    <div attrs="{'invisible': [('state', '!=', 'payment_terms')]}">
+                        <h2>Configure payment terms</h2>
+                    </div>
+                    <div attrs="{'invisible': [('state', '!=', 'contacts')]}">
+                        <h2>Configure contacts</h2>
+                    </div>
+                    <div attrs="{'invisible': [('state', '!=', 'moves')]}">
+                        <h2>Configure the date from which accounting entries should be synced</h2>
+                    </div>
+                    <div attrs="{'invisible': [('state', '!=', 'moves_initial')]}">
+                        <h2>Sync your moves from the past with Exact</h2>
+                    </div>
+                    <div attrs="{'invisible': [('state', '!=', 'done')]}">
+                        <h2>All done, you can now close this window and start using the connector</h2>
+                    </div>
+                    <notebook attrs="{'invisible': [('state', 'not in', ['journals', 'accounts', 'taxes', 'payment_terms', 'contacts'])]}">
+                        <page name="invalid" string="Invalid">
+                            <p>All records that are present in Odoo need to be matched with a record in Exact Online.</p>
+                            <p>
+                                You can either enter the Exact Online Code of the record and then click the button to update all the entries<br/>
+                                or<br/>
+                                try to archive or remove all the records in Odoo that do not have a matching Exact Online Code.<br/>
+                                <small>It is optional to match all records that are in Exact with a record that is in Odoo.</small>
+                            </p>
+                            <field name="invalid_line_ids">
+                                <tree editable="bottom" create="false" delete="false">
+                                    <field name="exact_online_code"/>
+                                    <field name="journal_id" attrs="{'column_invisible': [('parent.state', '!=', 'journals')]}"/>
+                                    <field name="account_id" attrs="{'column_invisible': [('parent.state', '!=', 'accounts')]}"/>
+                                    <field name="tax_id" attrs="{'column_invisible': [('parent.state', '!=', 'taxes')]}"/>
+                                    <field name="payment_term_id" attrs="{'column_invisible': [('parent.state', '!=', 'payment_terms')]}"/>
+                                    <field name="partner_id" attrs="{'column_invisible': [('parent.state', '!=', 'contacts')]}"/>
+                                    <field name="name_in_exact"/>
+                                    <field name="in_odoo" string="Odoo"/>
+                                    <field name="in_exact" string="Exact"/>
+                                    <field name="reason"/>
+                                </tree>
+                            </field>
+                            <group>
+                                <field name="invalid_count" readonly="1"/>
+                            </group>
+                            <button type="object" name="action_open_records_tree" string="Open for export to excel/csv"
+                                    attrs="{'invisible': [('can_update_invalid', '=', False), ('can_archive_invalid', '=', False), ('can_remove_invalid', '=', False), ('can_export_invalid', '=', False)]}"/>
+                        </page>
+                        <page name="valid" string="Valid">
+                            <p>These records have already been matched and no further action is required.</p>
+                            <field name="valid_line_ids">
+                                <tree editable="bottom" create="false" delete="false">
+                                    <field name="exact_online_code"/>
+                                    <field name="journal_id" attrs="{'column_invisible': [('parent.state', '!=', 'journals')]}"/>
+                                    <field name="account_id" attrs="{'column_invisible': [('parent.state', '!=', 'accounts')]}"/>
+                                    <field name="tax_id" attrs="{'column_invisible': [('parent.state', '!=', 'taxes')]}"/>
+                                    <field name="payment_term_id" attrs="{'column_invisible': [('parent.state', '!=', 'payment_terms')]}"/>
+                                    <field name="partner_id" attrs="{'column_invisible': [('parent.state', '!=', 'contacts')]}"/>
+                                    <field name="name_in_exact"/>
+                                    <field name="in_odoo" string="Odoo"/>
+                                    <field name="in_exact" string="Exact"/>
+                                </tree>
+                            </field>
+                            <group>
+                                <field name="valid_count" readonly="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                    <div>
+                        <field name="can_update_invalid" invisible="1"/>
+                        <field name="can_archive_invalid" invisible="1"/>
+                        <field name="can_remove_invalid" invisible="1"/>
+                        <field name="can_import_invalid" invisible="1"/>
+                        <field name="can_export_invalid" invisible="1"/>
+                        <field name="can_do_initial_move_sync" invisible="1"/>
+                        <button type="object" name="action_recheck" string="Recheck with Exact Online" attrs="{'invisible': [('can_update_invalid', '=', False), ('can_archive_invalid', '=', False), ('can_remove_invalid', '=', False), ('can_import_invalid', '=', False), ('can_export_invalid', '=', False)]}"/>
+                        <button type="object" name="action_update_invalid" string="Update records in Odoo" attrs="{'invisible': [('can_update_invalid', '=', False)]}"/>
+                        <button type="object" name="action_archive_invalid" string="Archive records in Odoo" attrs="{'invisible': [('can_archive_invalid', '=', False)]}"/>
+                        <button type="object" name="action_remove_invalid" string="Remove records in Odoo" attrs="{'invisible': [('can_remove_invalid', '=', False)]}"/>
+                        <button type="object" name="action_import_invalid" string="Import records from Exact" attrs="{'invisible': [('can_import_invalid', '=', False)]}"/>
+                        <button type="object" name="action_export_invalid" string="Export records to Exact" attrs="{'invisible': [('can_export_invalid', '=', False)]}"/>
+                    </div>
+                    <group attrs="{'invisible': [('state', '!=', 'moves')]}">
+                        <field name="sync_start_date"/>
+                        <field name="journals_to_sync"/>
+                    </group>
+                    <field name="moves_synced" invisible="1"/>
+                    <div attrs="{'invisible': ['|', ('state', '!=', 'moves_initial'), ('moves_synced', '!=', False)]}">
+                        <p>A total of <field name="moves_to_sync"/> posted moves can be synced to Exact Online based on the settings of the previous page.</p>
+                        <p>You can do this by clicking the button below, this is optional and not required.</p>
+                        <button type="object" name="action_do_initial_move_sync" string="Sync moves in the past" attrs="{'invisible': [('can_do_initial_move_sync', '=', False)]}"/>
+                    </div>
+                    <footer>
+                        <field name="can_go_to_next_step" invisible="1"/>
+                        <button type="object" name="action_previous" string="Go back" attrs="{'invisible': [('state', '=', 'intro')]}"/>
+                        <button type="object" name="action_next" string="Next" class="oe_highlight"
+                                attrs="{'invisible': [('can_go_to_next_step', '=', False)]}"/>
+                        <button special="cancel" string="Close"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_partner_form_exact_online" model="ir.ui.view">
+            <field name="name">res.partner.form.exact_online</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="groups_id" eval="[(4, ref('exact_online_connector.group_exact_online_connector_user'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='accounting']/group" position="inside">
+                    <group name="exact_online_connector" string="Exact Online">
+                        <field name="exact_online_code" readonly="1"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_partner_form_exact_online_manager" model="ir.ui.view">
+            <field name="name">res.partner.form.exact_online</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="exact_online_connector.view_partner_form_exact_online"/>
+            <field name="groups_id" eval="[(4, ref('exact_online_connector.group_exact_online_connector_manager'))]"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='exact_online_code']" position="attributes">
+                    <attribute name="readonly"/>
+                </xpath>
+                <xpath expr="//field[@name='exact_online_code']" position="after">
+                    <field name="exact_online_guid" groups="base.group_no_one"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

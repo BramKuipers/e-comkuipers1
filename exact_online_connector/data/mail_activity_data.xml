@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="mail_activity_type_exact_reconnect" model="mail.activity.type">
+            <field name="name">Reconnect exact connector</field>
+            <field name="icon">fa-exclamation-triangle</field>
+            <field name="res_model_id" ref="base.model_res_company"/>
+        </record>
+    </data>
+</odoo>
