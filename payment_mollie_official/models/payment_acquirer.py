@@ -27,6 +27,9 @@ class PaymentAcquirerMollie(models.Model):
     mollie_voucher_ids = fields.One2many('mollie.voucher.line', 'acquirer_id', string='Mollie Voucher Config')
     mollie_voucher_enabled = fields.Boolean(compute="_compute_mollie_voucher_enabled")
 
+    mollie_use_components = fields.Boolean(string='Mollie Components', default=True)
+    mollie_show_save_card = fields.Boolean(string='Single-Click payments')
+
     def _get_feature_support(self):
         res = super(PaymentAcquirerMollie, self)._get_feature_support()
         res['fees'].append('mollie')
@@ -241,7 +244,7 @@ class PaymentAcquirerMollie(models.Model):
 
             # check if order api is supportable by selected mehtod
             method_record = self._mollie_get_method_record(transaction.mollie_payment_method)
-            if method_record.supports_order_api:
+            if method_record.supports_order_api and not method_record.enable_qr_payment:  # QR does not support order api
                 result = self._mollie_create_order(transaction)
 
             # Fallback to payment method
@@ -262,6 +265,7 @@ class PaymentAcquirerMollie(models.Model):
                 transaction.form_feedback(result, "mollie")
             else:
                 tx_values['checkout_url'] = result["_links"]["checkout"]["href"]
+                tx_values['qr_src'] = result.get('details', {}).get('qrCode', {}).get('src')
             tx_values['status'] = result.get('status')
         return tx_values
 
@@ -280,7 +284,7 @@ class PaymentAcquirerMollie(models.Model):
 
         order_type = 'Sale Order' if order_source._name == 'sale.order' else 'Invoice'
 
-        payment_data = {
+        order_data = {
             'method': transaction.mollie_payment_method,
             'amount': {
                 'currency': transaction.currency_id.name,
@@ -308,17 +312,25 @@ class PaymentAcquirerMollie(models.Model):
         # Mollie throws error with local URL
         webhook_url = self._mollie_webhook_url(transaction.id)
         if "://localhost" not in webhook_url and "://192.168." not in webhook_url:
-            payment_data['webhookUrl'] = webhook_url
+            order_data['webhookUrl'] = webhook_url
 
+        payment_data = {}
         # Add if transection has cardToken
         if transaction.mollie_payment_token:
-            payment_data['payment'] = {'cardToken': transaction.mollie_payment_token}
+            payment_data['cardToken'] = transaction.mollie_payment_token
 
         # Add if transection has issuer
         if transaction.mollie_payment_issuer:
-            payment_data['payment'] = {'issuer': transaction.mollie_payment_issuer}
+            payment_data['issuer'] = transaction.mollie_payment_issuer
 
-        result = self._api_mollie_create_order(payment_data)
+        # Add if transaction has save card option
+        mollie_customer_id = transaction._get_transaction_customer_id()
+        if mollie_customer_id:
+            payment_data['customerId'] = mollie_customer_id
+
+        if payment_data:
+            order_data['payment'] = payment_data
+        result = self._api_mollie_create_order(order_data)
 
         # We are setting acquirer reference as we are receiving it before 3DS payment
         # So we can identify transaction with mollie respose
@@ -358,7 +370,17 @@ class PaymentAcquirerMollie(models.Model):
         if transaction.mollie_payment_issuer:
             payment_data['issuer'] = transaction.mollie_payment_issuer
 
-        result = self._api_mollie_create_payment(payment_data)
+        # Add if transaction has save card option
+        mollie_customer_id = transaction._get_transaction_customer_id()
+        if mollie_customer_id:
+            payment_data['customerId'] = mollie_customer_id
+
+        # Add QR parameter if enabled
+        params = {}
+        method_record = self._mollie_get_method_record(transaction.mollie_payment_method)
+        if method_record.enable_qr_payment:
+            params['include'] = 'details.qrCode'
+        result = self._api_mollie_create_payment(payment_data, params)
 
         # We are setting acquirer reference as we are receiving it before 3DS payment
         # So we can identify transaction with mollie respose
@@ -408,10 +430,10 @@ class PaymentAcquirerMollie(models.Model):
         mollie_client.set_user_agent_component('MollieOdoo', self.env.ref('base.module_payment_mollie_official').installed_version)
         return mollie_client
 
-    def _api_mollie_create_payment(self, payment_data):
+    def _api_mollie_create_payment(self, payment_data, params={}):
         mollie_client = self._api_mollie_get_client()
         try:
-            result = mollie_client.payments.create(payment_data)
+            result = mollie_client.payments.create(payment_data, **params)
         except UnprocessableEntityError as e:
             return {'error': str(e)}
         return result
@@ -431,6 +453,18 @@ class PaymentAcquirerMollie(models.Model):
     def _api_mollie_get_order(self, tx_id):
         mollie_client = self._api_mollie_get_client()
         return mollie_client.orders.get(tx_id, embed="payments")
+
+    def _api_mollie_create_customer_id(self):
+        mollie_client = self._api_mollie_get_client()
+        sudo_user = self.env.user.sudo()
+        customer_data = {'name': sudo_user.name, 'metadata': {'odoo_user_id': self.env.user.id}}
+        if sudo_user.email:
+            customer_data['email'] = sudo_user.email
+        return mollie_client.customers.create(customer_data)
+
+    def _api_get_customer_data(self, customer_id):
+        mollie_client = self._api_mollie_get_client()
+        return mollie_client.customers.get(customer_id)
 
     def _api_mollie_get_active_payment_methods(self, api_type=None, extra_params={}):
         result = {}
@@ -623,7 +657,7 @@ class PaymentAcquirerMollie(models.Model):
             'es_ES', 'ca_ES', 'pt_PT', 'it_IT',
             'nb_NO', 'sv_SE', 'fi_FI', 'da_DK',
             'is_IS', 'hu_HU', 'pl_PL', 'lv_LV',
-            'lt_LT']
+            'lt_LT', 'en_GB']
 
     def _mollie_redirect_url(self, tx_id):
         base_url = self.get_base_url()

@@ -7,6 +7,7 @@ var core = require('web.core');
 var Dialog = require('web.Dialog');
 var publicWidget = require('web.public.widget');
 var ajax = require('web.ajax');
+const qrDialog = require('mollie.qr.dialog');
 
 var _t = core._t;
 
@@ -14,6 +15,7 @@ var _t = core._t;
 publicWidget.registry.PaymentForm.include({
     events: _.extend({
         'click .o_issuer': '_clickIssuer',
+        'change input[name="mollieCardType"]': '_onChangeCardType',
     }, publicWidget.registry.PaymentForm.prototype.events),
     /**
      * @override
@@ -58,7 +60,7 @@ publicWidget.registry.PaymentForm.include({
      */
     updateNewPaymentDisplayStatus: function () {
         var self = this;
-        var $checkedRadio = this.$('input[type="radio"]:checked');
+        var $checkedRadio = this.$('.o_payment_acquirer_select input[type="radio"]:checked');
         if ($checkedRadio.length !== 1) {
             return;
         }
@@ -97,12 +99,13 @@ publicWidget.registry.PaymentForm.include({
             var button = ev.target;
         }
 
-        var $checkedRadio = this.$('input[type="radio"]:checked');
+        var $checkedRadio = this.$('.o_payment_acquirer_select input[type="radio"]:checked');
         if ($checkedRadio.length === 1 && $checkedRadio.data('provider') === 'mollie') {
             // Right now pass and submit the from to get mollie component token.
             this.disableButton(button);
             var methodName = $checkedRadio.data('methodname');
-            if (methodName === 'creditcard') {
+            const useSavedCard = this.$('#mollieSavedCard').prop('checked');
+            if (methodName === 'creditcard' && this.$('#o_mollie_component').length && !useSavedCard) {
                 return this._getMollieToken(button)
                     .then(this._createMollieTransaction.bind(this, methodName, button));
             } else {
@@ -159,16 +162,18 @@ publicWidget.registry.PaymentForm.include({
      * @private
      */
     _createMollieTransaction: function (paymentmethod, button, token) {
-        if (!token && paymentmethod === 'creditcard') {
-            return;
-        }
         var self = this;
         var issuer = false;
-        var checked_radio = this.$('input[type="radio"]:checked')[0];
+        var checked_radio = this.$('.o_payment_acquirer_select input[type="radio"]:checked')[0];
         var acquirer_id = this.getAcquirerIdFromRadio(checked_radio);
         var $tx_url = this.$el.find('input[name="prepare_tx_url"]');
         if (paymentmethod === 'ideal') {
             issuer = this.$('#o_payment_form_acq_ideal .o_issuer.active').data('methodname');
+        }
+
+        let useSavedCard = $('#mollieSavedCard').prop('checked');
+        if (paymentmethod === 'creditcard' && (this.$('#o_mollie_save_card').length || useSavedCard)) {
+            useSavedCard = this.$('#o_mollie_save_card input').prop("checked") || useSavedCard;
         }
 
         if ($tx_url.length === 1) {
@@ -176,7 +181,7 @@ publicWidget.registry.PaymentForm.include({
                 route: $tx_url[0].value,
                 params: {
                     'acquirer_id': parseInt(acquirer_id),
-                    'save_token': false,
+                    'mollie_save_card': useSavedCard,
                     'access_token': this.options.accessToken,
                     'success_url': this.options.successUrl,
                     'error_url': this.options.errorUrl,
@@ -212,7 +217,22 @@ publicWidget.registry.PaymentForm.include({
                         self.enableButton(button);
                         return new Promise(function () { });
                     }
-
+                    var qrInput = $(newForm).find("input[name='qr_src']"); // qr image src
+                    if (qrInput.length) {
+                        var dialog = new qrDialog(self, {
+                            qrImgSrc: qrInput.val(),
+                            submitRedirectForm: function () {newForm.submit()},
+                            size: 'small',
+                            title: _t('Scan QR'),
+                            renderFooter: false
+                        });
+                        var dialogDef = dialog.opened().then(() => {
+                            // $.unblockUI();
+                            self.enableButton(button);
+                        });
+                        dialog.open();
+                        return dialogDef;
+                    }
                     if (action_url) {
                         newForm.submit(); // and finally submit the form
                         return new Promise(function () { });
@@ -309,7 +329,16 @@ publicWidget.registry.PaymentForm.include({
         var $container = $(ev.currentTarget).closest('.o_issuer_container');
         $container.find('.o_issuer').removeClass('active');
         $(ev.currentTarget).addClass('active');
-    }
+    },
+
+    /**
+         * @private
+         * @param {MouseEvent} ev
+         */
+    _onChangeCardType: function (ev) {
+        this.$('#o_mollie_component').toggleClass('d-none', $(ev.currentTarget).val() !== 'component');
+        this.$('#o_mollie_save_card').toggleClass('d-none', $(ev.currentTarget).val() !== 'component');
+    },
 
 });
 
